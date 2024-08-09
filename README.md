@@ -1,6 +1,6 @@
 # PPT触屏辅助(PowerPoint Touch Assist)
 
-![PTA Logo](img/logo.png =600x600)
+<center><img src="img/logo.png" alt="PTA Logo" width="60%"/></center>
 
 [PPT触屏辅助](https://pptfortouch.framer.website) 此程序让你能在 Windows 10/11 中更高效地以“单击”翻页。
 ## 如何使用
