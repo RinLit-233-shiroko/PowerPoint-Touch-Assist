@@ -254,7 +254,7 @@
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>270</y>
+     <y>240</y>
      <width>281</width>
      <height>41</height>
     </rect>
@@ -330,7 +330,7 @@ All Right Reversed.</string>
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>310</y>
+     <y>320</y>
      <width>151</width>
      <height>31</height>
     </rect>
@@ -500,8 +500,8 @@ border-radius: 6px
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>310</y>
-     <width>131</width>
+     <y>280</y>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
@@ -816,6 +816,68 @@ border-radius: 5px
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_Github">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>320</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Microsoft YaHei</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+border:none;
+background-color:rgb(1, 4, 9);
+color: rgb(255, 255, 255);
+border-radius: 6px
+}
+
+QPushButton:hover{
+border:none;
+background-color:rgb(5, 21, 47) ;
+color: rgb(255, 255, 255);
+border-radius: 6px
+}
+
+QPushButton:pressed{
+border:none;
+background-color:rgb(9, 38, 85);
+color: rgb(255, 255, 255);
+border-radius: 6px
+}</string>
+   </property>
+   <property name="text">
+    <string>  Github</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>img/Octicons-mark-github.svg</normaloff>img/Octicons-mark-github.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>18</width>
+     <height>18</height>
+    </size>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>optTitle1_2</zorder>
   <zorder>subTitle1</zorder>
   <zorder>optTitle2</zorder>
@@ -842,6 +904,7 @@ border-radius: 5px
   <zorder>opt3_checkBox</zorder>
   <zorder>Copyright_2</zorder>
   <zorder>Copyright_3</zorder>
+  <zorder>pushButton_Github</zorder>
  </widget>
  <resources/>
  <connections/>

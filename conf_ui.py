@@ -43,6 +43,9 @@ class FramelessWindow(QDialog):
         #关于按钮
         self.about_button = self.findChild(QPushButton, 'pushButton_about')
         self.about_button.clicked.connect(self.RedirectTo_About)
+        #Github
+        self.github_button = self.findChild(QPushButton, 'pushButton_Github')
+        self.github_button.clicked.connect(self.RedirectTo_Github)
 
     #behavior行为
     def opt1_Save(self, text):
@@ -52,7 +55,7 @@ class FramelessWindow(QDialog):
     def opt2_ResetToDefault(self):
         config.write_conf('General', 'PPT_Title', 'PowerPoint 幻灯片放映')
         self.opt2_LineEdit.setText(config.read_conf('General', 'PPT_Title'))
-    def opt3_Save(self, state):
+    def opt3_Save(self, state): 
         is_checked = state == Qt.CheckState.Checked.value
         config.write_conf('General', 'auto_startup', str(int(is_checked)))
         if is_checked:
@@ -67,6 +70,9 @@ class FramelessWindow(QDialog):
         QDesktopServices.openUrl(url)
     def RedirectTo_Bilibili(self):
         url = QUrl('https://space.bilibili.com/569522843')
+        QDesktopServices.openUrl(url)
+    def RedirectTo_Github(self):#gayhub
+        url = QUrl('https://github.com/RinLit-233-shiroko/PowerPoint-Touch-Assist')
         QDesktopServices.openUrl(url)
     
 
