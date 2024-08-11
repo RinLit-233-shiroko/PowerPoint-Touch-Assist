@@ -1,10 +1,11 @@
 '''
-    PowerPoint Touch Assist v1.1
+    PowerPoint Touch Assist v1.2
 
     Author: RinLit_233OuO @bilibili
-    Version:  1.1
+    Version:  1.2
 
     ###
+    v1.2: 修复bug
     v1.1: 增加高分辨率支持, 增加设置菜单
     v1: 新App出现!
 '''

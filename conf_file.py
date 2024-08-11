@@ -1,13 +1,13 @@
-'''
-    PowerPoint Touch Assist v1.1
+"""
+    PowerPoint Touch Assist
     读取配置文件
     Author: RinLit_233OuO @bilibili
-    Version:  1.1
-'''
+    Version:  1.2
+"""
 import configparser as config
 path = 'config.ini'
 
-#选项及对应的dpi
+# 选项及对应的dpi
 dpi_dict = {
     '0':1,
     '1':1.25,
@@ -17,8 +17,10 @@ dpi_dict = {
 }
 
 conf = config.ConfigParser()
-#读取config
-def read_conf(Section = 'General', Key = str):
+
+
+# 读取config
+def read_conf(section = 'General', key = ''):
     data = config.ConfigParser()
     try:
         with open(path, 'r', encoding='utf-8') as configfile:
@@ -28,11 +30,13 @@ def read_conf(Section = 'General', Key = str):
     except Exception:
         return None
 
-    if Section in data and Key in data[Section]:
-        return data[Section][Key]
+    if section in data and key in data[section]:
+        return data[section][key]
     else:
         return None
-#写入config
+
+
+# 写入config
 def write_conf(section, key, value):
     data = config.ConfigParser()
     try:
@@ -45,7 +49,7 @@ def write_conf(section, key, value):
 
     if section not in data:
         data.add_section(section)
-    
+
     data.set(section, key, value)
 
     with open(path, 'w', encoding='utf-8') as configfile:
