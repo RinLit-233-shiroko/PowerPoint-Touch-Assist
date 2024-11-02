@@ -1,0 +1,4 @@
+PyAutoGUI~=0.9.54
+PyGetWindow~=0.0.9
+pynput~=1.7.7
+pyqt6~=6.7.1
