@@ -5,22 +5,25 @@
     Version:  1.2
 """
 import configparser as config
+
 path = 'config.ini'
 
 # 选项及对应的dpi
 dpi_dict = {
-    '0':1,
-    '1':1.25,
-    '2':1.5,
-    '3':1.75,
-    '4':2
+    '0': 1,
+    '1': 1.25,
+    '2': 1.5,
+    '3': 1.75,
+    '4': 2,
+    '5': 2.50,
+    '6': 3,
 }
 
 conf = config.ConfigParser()
 
 
 # 读取config
-def read_conf(section = 'General', key = ''):
+def read_conf(section='General', key=''):
     data = config.ConfigParser()
     try:
         with open(path, 'r', encoding='utf-8') as configfile:

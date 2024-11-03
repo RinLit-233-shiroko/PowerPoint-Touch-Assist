@@ -1,911 +1,958 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>750</width>
-    <height>420</height>
-   </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>750</width>
-    <height>420</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>750</width>
-    <height>420</height>
-   </size>
-  </property>
-  <property name="font">
-   <font>
-    <family>Microsoft YaHei UI</family>
-   </font>
-  </property>
-  <property name="windowTitle">
-   <string>PPT 触屏辅助 - RinLit</string>
-  </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>img/favicon.ico</normaloff>img/favicon.ico</iconset>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
-  <widget class="QLabel" name="Title">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>10</y>
-     <width>81</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>22</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>设置</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo1">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>370</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>img/favicon.ico</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo3">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>370</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(127, 127, 127);</string>
-   </property>
-   <property name="text">
-    <string>PPT 触屏辅助</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="opt2_LineEdit">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>200</y>
-     <width>201</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::ClickFocus</enum>
-   </property>
-   <property name="placeholderText">
-    <string>默认：PowerPoint 幻灯片放映</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="optTitle1">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>130</y>
-     <width>331</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>触屏检测 DPI</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="subTitle2">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>70</y>
-     <width>51</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>17</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>关于</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="opt1_Combo">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>130</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="editable">
-    <bool>false</bool>
-   </property>
-   <property name="currentText">
-    <string>100%</string>
-   </property>
-   <property name="duplicatesEnabled">
-    <bool>false</bool>
-   </property>
-   <item>
-    <property name="text">
-     <string>100%</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>125%</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>150%</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>175%</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>200%</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="optTitle2">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>200</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>PowerPoint
-放映程序标题*</string>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Copyright1">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>240</y>
-     <width>281</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(131, 131, 131);</string>
-   </property>
-   <property name="text">
-    <string>Copyright © 2024 RinLit_233OuO
-All Right Reversed.</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="subTitle1">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>70</y>
-     <width>51</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>17</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>通用</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>130</y>
-     <width>16</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 81);</string>
-   </property>
-   <property name="text">
-    <string>*</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Bilibili">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>320</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-border:none;
-background-color:rgb(85, 170, 255);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
+    <class>Dialog</class>
+    <widget class="QDialog" name="Dialog">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>750</width>
+                <height>420</height>
+            </rect>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>750</width>
+                <height>420</height>
+            </size>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>750</width>
+                <height>420</height>
+            </size>
+        </property>
+        <property name="font">
+            <font>
+                <family>Microsoft YaHei UI</family>
+            </font>
+        </property>
+        <property name="windowTitle">
+            <string>PPT 触屏辅助 - RinLit</string>
+        </property>
+        <property name="windowIcon">
+            <iconset>
+                <normaloff>img/favicon.ico</normaloff>img/favicon.ico
+            </iconset>
+        </property>
+        <property name="styleSheet">
+            <string notr="true"/>
+        </property>
+        <widget class="QLabel" name="Title">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>10</y>
+                    <width>81</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>22</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>设置</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="logo1">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>370</y>
+                    <width>31</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="pixmap">
+                <pixmap>img/favicon.ico</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="logo3">
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>60</x>
+                    <y>370</y>
+                    <width>111</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                    <kerning>true</kerning>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(127, 127, 127);</string>
+            </property>
+            <property name="text">
+                <string>PPT 触屏辅助</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="opt2_LineEdit">
+            <property name="geometry">
+                <rect>
+                    <x>180</x>
+                    <y>200</y>
+                    <width>201</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                </font>
+            </property>
+            <property name="focusPolicy">
+                <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="placeholderText">
+                <string>默认：PowerPoint 幻灯片放映</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="optTitle1">
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>130</y>
+                    <width>331</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>触屏检测 DPI</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="subTitle2">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>70</y>
+                    <width>51</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>17</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>关于</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" name="opt1_Combo">
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>130</y>
+                    <width>91</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei UI</family>
+                    <pointsize>11</pointsize>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true"/>
+            </property>
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+            <property name="currentText">
+                <string>100%</string>
+            </property>
+            <property name="duplicatesEnabled">
+                <bool>false</bool>
+            </property>
+            <item>
+                <property name="text">
+                    <string>100%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>125%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>150%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>175%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>200%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>250%</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>300%</string>
+                </property>
+            </item>
+        </widget>
+        <widget class="QLabel" name="optTitle2">
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>200</y>
+                    <width>121</width>
+                    <height>51</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>PowerPoint
+                    放映程序标题*
+                </string>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Copyright1">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>240</y>
+                    <width>281</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(131, 131, 131);</string>
+            </property>
+            <property name="text">
+                <string>Copyright © 2024 RinLit_233OuO
+                    All Right Reversed.
+                </string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="subTitle1">
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>70</y>
+                    <width>51</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>17</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>通用</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>130</y>
+                    <width>16</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(255, 0, 81);</string>
+            </property>
+            <property name="text">
+                <string>*</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_Bilibili">
+            <property name="geometry">
+                <rect>
+                    <x>560</x>
+                    <y>320</y>
+                    <width>151</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">QPushButton{
+                    border:none;
+                    background-color:rgb(85, 170, 255);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
 
-QPushButton:hover{
-border:none;
-background-color:rgb(137, 196, 255) ;
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
+                    QPushButton:hover{
+                    border:none;
+                    background-color:rgb(137, 196, 255) ;
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
 
-QPushButton:pressed{
-border:none;
-background-color:rgb(67, 136, 204);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}</string>
-   </property>
-   <property name="text">
-    <string>  我的 哔哩哔哩</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>img/bilibili-website.favicon.svg</normaloff>img/bilibili-website.favicon.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>18</width>
-     <height>18</height>
-    </size>
-   </property>
-   <property name="autoDefault">
-    <bool>true</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Copyright">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>370</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(176, 176, 176);</string>
-   </property>
-   <property name="text">
-    <string>© 2024 RinLit_233OuO</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo2">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>120</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>img/favicon.ico</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="logo4">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>120</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei UI</family>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(127, 127, 127);</string>
-   </property>
-   <property name="text">
-    <string>PPT 触屏辅助</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Version">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>160</y>
-     <width>271</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>版本：1.2</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_about">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>280</y>
-     <width>291</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-border:none;
-background-color: rgb(255, 119, 0);
-color: rgb(255, 255, 255);
-border-radius: 6px;
-}
+                    QPushButton:pressed{
+                    border:none;
+                    background-color:rgb(67, 136, 204);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
+                </string>
+            </property>
+            <property name="text">
+                <string>我的 哔哩哔哩</string>
+            </property>
+            <property name="icon">
+                <iconset>
+                    <normaloff>img/bilibili-website.favicon.svg</normaloff>img/bilibili-website.favicon.svg
+                </iconset>
+            </property>
+            <property name="iconSize">
+                <size>
+                    <width>18</width>
+                    <height>18</height>
+                </size>
+            </property>
+            <property name="autoDefault">
+                <bool>true</bool>
+            </property>
+            <property name="default">
+                <bool>false</bool>
+            </property>
+            <property name="flat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Copyright">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>370</y>
+                    <width>151</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(176, 176, 176);</string>
+            </property>
+            <property name="text">
+                <string>© 2024 RinLit_233OuO</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="logo2">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>120</y>
+                    <width>31</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="pixmap">
+                <pixmap>img/favicon.ico</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="logo4">
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>450</x>
+                    <y>120</y>
+                    <width>111</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei UI</family>
+                    <pointsize>12</pointsize>
+                    <italic>false</italic>
+                    <bold>true</bold>
+                    <kerning>true</kerning>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(127, 127, 127);</string>
+            </property>
+            <property name="text">
+                <string>PPT 触屏辅助</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Version">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>160</y>
+                    <width>271</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>版本：1.2</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_about">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>280</y>
+                    <width>291</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">QPushButton{
+                    border:none;
+                    background-color: rgb(255, 119, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px;
+                    }
 
-QPushButton:hover{
-border:none;
-background-color: rgb(255, 136, 0);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
+                    QPushButton:hover{
+                    border:none;
+                    background-color: rgb(255, 136, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
 
-QPushButton:pressed{
-border:none;
-background-color:rgb(204, 95, 0);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
-</string>
-   </property>
-   <property name="text">
-    <string>关于本产品</string>
-   </property>
-   <property name="autoDefault">
-    <bool>true</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Introduction">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>190</y>
-     <width>291</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>本产品皆在为了解决 PowerPoint 在 Windows 10/11 上 PPT 无法单击翻页的问题。</string>
-   </property>
-   <property name="textFormat">
-    <enum>Qt::AutoText</enum>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Close">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>370</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-border:none;
-background-color: rgb(255, 119, 0);
-color: rgb(255, 255, 255);
-border-radius: 5px
-}
+                    QPushButton:pressed{
+                    border:none;
+                    background-color:rgb(204, 95, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
+                </string>
+            </property>
+            <property name="text">
+                <string>关于本产品</string>
+            </property>
+            <property name="autoDefault">
+                <bool>true</bool>
+            </property>
+            <property name="default">
+                <bool>false</bool>
+            </property>
+            <property name="flat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Introduction">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>190</y>
+                    <width>291</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>本产品皆在为了解决 PowerPoint 在 Windows 10/11 上 PPT 无法单击翻页的问题。</string>
+            </property>
+            <property name="textFormat">
+                <enum>Qt::AutoText</enum>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="Close">
+            <property name="geometry">
+                <rect>
+                    <x>580</x>
+                    <y>370</y>
+                    <width>131</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">QPushButton{
+                    border:none;
+                    background-color: rgb(255, 119, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 5px
+                    }
 
-QPushButton:hover{
-border:none;
-background-color: rgb(255, 136, 0);
-color: rgb(255, 255, 255);
-border-radius: 5px
-}
+                    QPushButton:hover{
+                    border:none;
+                    background-color: rgb(255, 136, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 5px
+                    }
 
-QPushButton:pressed{
-border:none;
-background-color:rgb(204, 95, 0);
-color: rgb(255, 255, 255);
-border-radius: 5px
-}
-</string>
-   </property>
-   <property name="text">
-    <string>关闭</string>
-   </property>
-   <property name="shortcut">
-    <string>Return</string>
-   </property>
-   <property name="autoDefault">
-    <bool>true</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="opt2Reset">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>200</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>HoloLens MDL2 Assets</family>
-     <pointsize>9</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string></string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Title_2">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>10</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>首次启动请配置</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>20</y>
-     <width>16</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>16</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 0, 81);</string>
-   </property>
-   <property name="text">
-    <string>*</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="opt3_checkBox">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>310</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="checked">
-    <bool>false</bool>
-   </property>
-   <property name="autoRepeat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="optTitle1_2">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>300</y>
-     <width>331</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>开机自启动</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Copyright_2">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>230</y>
-     <width>221</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(176, 176, 176);</string>
-   </property>
-   <property name="text">
-    <string>默认情况下不要更改此选项
-如果PowerPoint语言
-不是简体中文再做更改</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Copyright_3">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>360</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(176, 176, 176);</string>
-   </property>
-   <property name="text">
-    <string>以后可在
-“开始菜单”中打开设置</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_Github">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>320</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-border:none;
-background-color:rgb(1, 4, 9);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
+                    QPushButton:pressed{
+                    border:none;
+                    background-color:rgb(204, 95, 0);
+                    color: rgb(255, 255, 255);
+                    border-radius: 5px
+                    }
+                </string>
+            </property>
+            <property name="text">
+                <string>关闭</string>
+            </property>
+            <property name="shortcut">
+                <string>Return</string>
+            </property>
+            <property name="autoDefault">
+                <bool>true</bool>
+            </property>
+            <property name="default">
+                <bool>false</bool>
+            </property>
+            <property name="flat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="opt2Reset">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>200</y>
+                    <width>31</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>HoloLens MDL2 Assets</family>
+                    <pointsize>9</pointsize>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true"/>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Title_2">
+            <property name="geometry">
+                <rect>
+                    <x>570</x>
+                    <y>10</y>
+                    <width>151</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>首次启动请配置</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+            <property name="geometry">
+                <rect>
+                    <x>590</x>
+                    <y>20</y>
+                    <width>16</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>16</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(255, 0, 81);</string>
+            </property>
+            <property name="text">
+                <string>*</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QCheckBox" name="opt3_checkBox">
+            <property name="geometry">
+                <rect>
+                    <x>360</x>
+                    <y>310</y>
+                    <width>16</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei UI</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="checked">
+                <bool>false</bool>
+            </property>
+            <property name="autoRepeat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="optTitle1_2">
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>300</y>
+                    <width>331</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>开机自启动</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Copyright_2">
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>230</y>
+                    <width>221</width>
+                    <height>61</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(176, 176, 176);</string>
+            </property>
+            <property name="text">
+                <string>默认情况下不要更改此选项
+                    如果PowerPoint语言
+                    不是简体中文再做更改
+                </string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="Copyright_3">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>360</y>
+                    <width>151</width>
+                    <height>51</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">color: rgb(176, 176, 176);</string>
+            </property>
+            <property name="text">
+                <string>以后可在
+                    “开始菜单”中打开设置
+                </string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="wordWrap">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_Github">
+            <property name="geometry">
+                <rect>
+                    <x>420</x>
+                    <y>320</y>
+                    <width>131</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">QPushButton{
+                    border:none;
+                    background-color:rgb(1, 4, 9);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
 
-QPushButton:hover{
-border:none;
-background-color:rgb(5, 21, 47) ;
-color: rgb(255, 255, 255);
-border-radius: 6px
-}
+                    QPushButton:hover{
+                    border:none;
+                    background-color:rgb(5, 21, 47) ;
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
 
-QPushButton:pressed{
-border:none;
-background-color:rgb(9, 38, 85);
-color: rgb(255, 255, 255);
-border-radius: 6px
-}</string>
-   </property>
-   <property name="text">
-    <string>  Github</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>img/Octicons-mark-github.svg</normaloff>img/Octicons-mark-github.svg</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>18</width>
-     <height>18</height>
-    </size>
-   </property>
-   <property name="autoDefault">
-    <bool>true</bool>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <zorder>optTitle1_2</zorder>
-  <zorder>subTitle1</zorder>
-  <zorder>optTitle2</zorder>
-  <zorder>Title</zorder>
-  <zorder>logo1</zorder>
-  <zorder>logo3</zorder>
-  <zorder>opt2_LineEdit</zorder>
-  <zorder>optTitle1</zorder>
-  <zorder>subTitle2</zorder>
-  <zorder>opt1_Combo</zorder>
-  <zorder>Copyright1</zorder>
-  <zorder>label_6</zorder>
-  <zorder>pushButton_Bilibili</zorder>
-  <zorder>Copyright</zorder>
-  <zorder>logo2</zorder>
-  <zorder>logo4</zorder>
-  <zorder>Version</zorder>
-  <zorder>pushButton_about</zorder>
-  <zorder>Introduction</zorder>
-  <zorder>Close</zorder>
-  <zorder>opt2Reset</zorder>
-  <zorder>Title_2</zorder>
-  <zorder>label_7</zorder>
-  <zorder>opt3_checkBox</zorder>
-  <zorder>Copyright_2</zorder>
-  <zorder>Copyright_3</zorder>
-  <zorder>pushButton_Github</zorder>
- </widget>
- <resources/>
- <connections/>
+                    QPushButton:pressed{
+                    border:none;
+                    background-color:rgb(9, 38, 85);
+                    color: rgb(255, 255, 255);
+                    border-radius: 6px
+                    }
+                </string>
+            </property>
+            <property name="text">
+                <string>Github</string>
+            </property>
+            <property name="icon">
+                <iconset>
+                    <normaloff>img/Octicons-mark-github.svg</normaloff>img/Octicons-mark-github.svg
+                </iconset>
+            </property>
+            <property name="iconSize">
+                <size>
+                    <width>18</width>
+                    <height>18</height>
+                </size>
+            </property>
+            <property name="autoDefault">
+                <bool>true</bool>
+            </property>
+            <property name="default">
+                <bool>false</bool>
+            </property>
+            <property name="flat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="optTitle2_2">
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>330</y>
+                    <width>331</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>12</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>使用正则表达式匹配（高级）</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" name="opt4_checkBox">
+            <property name="geometry">
+                <rect>
+                    <x>360</x>
+                    <y>340</y>
+                    <width>16</width>
+                    <height>16</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Microsoft YaHei UI</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="checked">
+                <bool>false</bool>
+            </property>
+            <property name="autoRepeat">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <zorder>optTitle1_2</zorder>
+        <zorder>subTitle1</zorder>
+        <zorder>optTitle2</zorder>
+        <zorder>Title</zorder>
+        <zorder>logo1</zorder>
+        <zorder>logo3</zorder>
+        <zorder>opt2_LineEdit</zorder>
+        <zorder>optTitle1</zorder>
+        <zorder>subTitle2</zorder>
+        <zorder>opt1_Combo</zorder>
+        <zorder>Copyright1</zorder>
+        <zorder>label_6</zorder>
+        <zorder>pushButton_Bilibili</zorder>
+        <zorder>Copyright</zorder>
+        <zorder>logo2</zorder>
+        <zorder>logo4</zorder>
+        <zorder>Version</zorder>
+        <zorder>pushButton_about</zorder>
+        <zorder>Introduction</zorder>
+        <zorder>Close</zorder>
+        <zorder>opt2Reset</zorder>
+        <zorder>Title_2</zorder>
+        <zorder>label_7</zorder>
+        <zorder>opt3_checkBox</zorder>
+        <zorder>Copyright_2</zorder>
+        <zorder>Copyright_3</zorder>
+        <zorder>pushButton_Github</zorder>
+        <zorder>optTitle2_2</zorder>
+        <zorder>opt4_checkBox</zorder>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>
