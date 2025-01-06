@@ -1,3 +1,6 @@
+> [!NOTE]
+> 此项目正在重构
+
 # PPT触屏辅助(PowerPoint Touch Assist)
 
 <center><img src="img/logo.png" alt="PTA Logo" width="20%"/></center>
