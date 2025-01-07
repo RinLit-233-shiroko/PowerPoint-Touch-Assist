@@ -1,23 +1,14 @@
-"""
-    PowerPoint Touch Assist
-    设置菜单
-    Author: RinLit_233OuO @bilibili
-    Version:  1.2
-"""
-
 import sys
 
 from PyQt6 import uic
 from PyQt6.QtCore import QUrl, Qt
-from PyQt6.QtGui import QDesktopServices
-from PyQt6.QtWidgets import QApplication, QDialog, QLineEdit, QPushButton, QComboBox, QCheckBox
+from PyQt6.QtGui import QDesktopServices, QIcon
+from PyQt6.QtWidgets import QApplication, QScroller
+from qfluentwidgets import FluentWindow, FluentIcon as fIcon, setTheme, Theme, ComboBox, setThemeColor, LineEdit, \
+    ToolButton, SwitchButton, SmoothScrollArea, NavigationItemPosition, BodyLabel, PushButton
 
-import conf_file as config
+import config as config
 import shortcut as a
-
-
-def close_window():
-    sys.exit()
 
 
 def open_about_url():
@@ -30,84 +21,113 @@ def open_bilibili():
     QDesktopServices.openUrl(url)
 
 
-def open_github():  # gayhub
+def open_github():  # GayHub
     url = QUrl('https://github.com/RinLit-233-shiroko/PowerPoint-Touch-Assist')
     QDesktopServices.openUrl(url)
 
 
 def save_if_auto_start(state):
     is_checked = state == Qt.CheckState.Checked.value
-    config.write_conf('General', 'auto_startup', str(is_checked))
+    config.write_conf('General', 'auto_startup', str(1 if state else 0))
     if is_checked:
         a.add_to_startup('PowerPoint_TouchAssist.exe')
     else:
         a.remove_from_startup()
 
 
-def save_if_use_regex(state):
-    is_checked = state == Qt.CheckState.Checked.value
-    config.write_conf('General', 'use_regex', str(is_checked))
-
-
-def save_ppt_title(text):
-    config.write_conf('General', 'PPT_Title', text)
+# def save_if_use_regex(state):
+#     is_checked = state == Qt.CheckState.Checked.value
+#     config.write_conf('General', 'use_regex', str(is_checked))
 
 
 def save_dpi(text):
-    config.write_conf('General', 'DPI', str(text))
+    config.write_conf('General', 'DPI', config.dpi_list[text])
 
 
-class FramelessWindow(QDialog):
-    def __init__(self):
-        super().__init__()
-        uic.loadUi('./settings.ui', self)
+class Settings(FluentWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.initUI()
 
-        # ## 控件
-        # 选项1 [DPI]
-        self.opt1_Combo = self.findChild(QComboBox, 'opt1_Combo')
-        self.opt1_Combo.setCurrentIndex(int(config.read_conf('General', 'DPI')))
-        self.opt1_Combo.currentIndexChanged.connect(save_dpi)
-        # 选项2 [ppt标题]
-        self.opt2_LineEdit = self.findChild(QLineEdit, 'opt2_LineEdit')
-        self.opt2_LineEdit.setText(config.read_conf('General', 'PPT_Title'))
-        self.opt2_LineEdit.textChanged.connect(save_ppt_title)
-        # 选项3 [开机自启动]
-        self.opt3_checkBox = self.findChild(QCheckBox, 'opt3_checkBox')
-        self.opt3_checkBox.setChecked(bool(config.read_conf('General', 'auto_startup')))
-        self.opt3_checkBox.stateChanged.connect(save_if_auto_start)
-        # 选项4 [开机自启动]
-        self.opt3_checkBox = self.findChild(QCheckBox, 'opt4_checkBox')
-        self.opt3_checkBox.setChecked(bool(config.read_conf('General', 'use_regex')))
-        self.opt3_checkBox.stateChanged.connect(save_if_use_regex)
-        # reset按钮
-        self.opt2_Reset = self.findChild(QPushButton, 'opt2Reset')
-        self.opt2_Reset.clicked.connect(self.reset_ppt_title)
-        # 关闭按钮
-        self.close_button = self.findChild(QPushButton, 'Close')
-        self.close_button.clicked.connect(close_window)
-        # b站启动按钮
-        self.bilibili_button = self.findChild(QPushButton, 'pushButton_Bilibili')
-        self.bilibili_button.clicked.connect(open_bilibili)
-        # 关于按钮
-        self.about_button = self.findChild(QPushButton, 'pushButton_about')
-        self.about_button.clicked.connect(open_about_url)
-        # Github
-        self.github_button = self.findChild(QPushButton, 'pushButton_Github')
-        self.github_button.clicked.connect(open_github)
+    def initUI(self):
+        setThemeColor('#e66d4a')
+        setTheme(Theme.AUTO)
 
-    # behavior行为
+        self.init_nav()
+        self.add_subInterface()
+        self.setupPages()
 
+        self.setWindowTitle("PPT 触屏辅助 | 设置")
+        self.setWindowIcon(QIcon("img/favicon.ico"))
+        self.setMinimumSize(500, 400)
+
+        screen_geometry = QApplication.primaryScreen().geometry()
+        screen_width = screen_geometry.width()
+        screen_height = screen_geometry.height()
+
+        width = int(screen_width * 0.4)
+        height = int(screen_height * 0.5)
+
+        self.move(int(screen_width / 2 - width / 2), int(screen_height / 2 - height / 2))
+        self.resize(width, height)
+
+    def init_nav(self):
+        self.settingsPage = uic.loadUi("ui/settings.ui")
+        self.settingsPage.setObjectName("settings")
+        self.aboutPage = uic.loadUi("ui/about.ui")
+        self.aboutPage.setObjectName("about")
+
+    def add_subInterface(self):
+        self.navigationInterface.setExpandWidth(175)
+        self.addSubInterface(self.settingsPage, fIcon.SETTING, "设置")
+        self.addSubInterface(self.aboutPage, fIcon.INFO, "关于", NavigationItemPosition.BOTTOM)
+
+    def setupPages(self):
+        self.setup_settings()
+        self.setup_about()
+
+    def setup_settings(self):
+        general_scroll = self.settingsPage.findChild(SmoothScrollArea, 'general_scroll')
+        QScroller.grabGesture(general_scroll.viewport(), QScroller.ScrollerGestureType.LeftMouseButtonGesture)
+
+        self.dpi_select = self.settingsPage.findChild(ComboBox, 'dpi_select')
+        self.program_name = self.settingsPage.findChild(LineEdit, 'program_name')
+        self.reset_name = self.settingsPage.findChild(ToolButton, 'reset_name')
+        self.switch_startup = self.settingsPage.findChild(SwitchButton, 'switch_startup')
+
+        self.dpi_select.addItems(config.dpi_list_text)
+        self.dpi_select.setCurrentIndex(config.dpi_list.index(config.read_conf('General', 'DPI')))
+        self.dpi_select.currentIndexChanged.connect(save_dpi)
+        self.program_name.setFixedWidth(225)
+        self.program_name.setText(config.read_conf('General', 'program_title'))
+        self.program_name.textChanged.connect(lambda text: config.write_conf('General', 'program_title', text))
+        self.reset_name.setIcon(fIcon.CANCEL)
+        self.reset_name.clicked.connect(self.reset_ppt_title)
+        self.switch_startup.setChecked(config.read_conf('General', 'auto_startup') == '1')
+        self.switch_startup.checkedChanged.connect(save_if_auto_start)
+
+    def setup_about(self):
+        about_scroll = self.aboutPage.findChild(SmoothScrollArea, 'about_scroll')
+        QScroller.grabGesture(about_scroll.viewport(), QScroller.ScrollerGestureType.LeftMouseButtonGesture)
+
+        version = self.aboutPage.findChild(BodyLabel, 'version')
+        btn_github = self.aboutPage.findChild(PushButton, 'button_github')
+        btn_bilibili = self.aboutPage.findChild(PushButton, 'button_bilibili')
+        btn_website = self.aboutPage.findChild(PushButton, 'button_website')
+
+        btn_github.clicked.connect(open_github)
+        btn_bilibili.clicked.connect(open_bilibili)
+        btn_website.clicked.connect(open_about_url)
+        version.setText(f"版本：{config.read_conf('Misc', 'ver')}")
+
+    # Methods
     def reset_ppt_title(self):
-        config.write_conf('General', 'PPT_Title', 'PowerPoint 幻灯片放映')
-        self.opt2_LineEdit.setText(config.read_conf('General', 'PPT_Title'))
+        config.write_conf('General', 'program_title', 'PowerPoint 幻灯片放映')
+        self.program_name.setText(config.read_conf('General', 'program_title'))
 
-
-def main():
+if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = FramelessWindow()
+    window = Settings()
     window.show()
     sys.exit(app.exec())
 
-
-if __name__ == '__main__':
-    main()

@@ -1,0 +1,11 @@
+{
+  "General": {
+    "dpi": 1,
+    "program_title": "PowerPoint 幻灯片放映",
+    "auto_startup": 0
+  },
+  "Misc": {
+    "initialstartup": 1,
+    "ver": "2.0.0"
+  }
+}

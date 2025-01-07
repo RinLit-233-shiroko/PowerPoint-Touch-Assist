@@ -5,7 +5,7 @@ import pygetwindow as gw
 from pynput import mouse
 from win32 import win32api
 
-import conf_file as conf
+import config as conf
 
 # get分辨率
 screenX = win32api.GetSystemMetrics(0)
